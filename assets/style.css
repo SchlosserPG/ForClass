@@ -1,0 +1,24 @@
+body, html{
+    background: #dfe9e1;
+    color: #1f1e1e;
+    padding:40px;
+    font: 16px Arial, sans-serif;
+}
+
+p{
+    background-color: #d4cece;
+}
+
+a{
+    display:inline-block;
+    padding:25px;
+    border-radius:9999px;
+    background-color: #3b82f6;
+    color:#ffffff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+a:hover{
+    background-color: #474d59;
+}
