@@ -7,9 +7,11 @@ import seaborn as sns
 file_path = "data/livedata-weekly-job-changes-2025-07-23.csv"
 df = pd.read_csv(file_path)
 
+
 # Convert date columns to datetime
 df['current_job.started_at'] = pd.to_datetime(df['current_job.started_at'], errors='coerce')
 df['previous_job.ended_at'] = pd.to_datetime(df['previous_job.ended_at'], errors='coerce')
+
 
 # Create a 'month' column directly for arrivals vs departures
 df['month'] = df.apply(
@@ -73,8 +75,7 @@ plt.show()
 
 ##Plot Top 10 Job Functions by Number of Departures
 # Get top 10 job functions
-departures_by_function = (
-    departures['previous_job.function']     # look at the job function people
+departures_by_function = (departures['previous_job.function']     # look at the job function people
     .value_counts()                         # count how many departures per function
     .nlargest(10)                           # keep the top 10
     .reset_index()                          # make it a DataFrame for plotting
