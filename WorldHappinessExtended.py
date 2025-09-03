@@ -66,10 +66,10 @@ def update_dashboard(selected_year):
     # so the map fills more space.
     map_fig.update_layout(margin=dict(l=0, r=0, t=40, b=0))
 
-    # Bar chart for top 10 and bottom 10
+    # Bar chart for top 5 and bottom 5
     top_bottom = pd.concat([
-        filtered_df.nlargest(10, 'Happiness Score'),
-        filtered_df.nsmallest(10, 'Happiness Score')
+        filtered_df.nlargest(5, 'Happiness Score'),
+        filtered_df.nsmallest(5, 'Happiness Score')
     ])
     bar_fig = px.bar(
         top_bottom.sort_values('Happiness Score'),
@@ -77,7 +77,7 @@ def update_dashboard(selected_year):
         y='Country',
         orientation='h',
         color='Happiness Score',
-        title=f"Top and Bottom 10 Countries by Happiness Score - {selected_year}",
+        title=f"Top and Bottom Countries by Happiness Score - {selected_year}",
         color_continuous_scale='BrBG'
     )
     bar_fig.update_layout(yaxis={'categoryorder': 'total ascending'})
