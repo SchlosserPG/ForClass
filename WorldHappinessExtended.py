@@ -45,9 +45,9 @@ app.layout = html.Div(style={'padding': '20px', 'backgroundColor': "#FAF3DD"}, c
 
 # Callback for updating map and bar chart
 @app.callback(
-    [Output('happiness-map', 'figure'),
-     Output('top-bottom-bar', 'figure')],
-    [Input('year-dropdown', 'value')]
+    Output('happiness-map', 'figure'),
+    Output('top-bottom-bar', 'figure'),
+    Input('year-dropdown', 'value')
 )
 def update_dashboard(selected_year):
     filtered_df = df[df['Year'] == selected_year]
