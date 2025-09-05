@@ -1,0 +1,116 @@
+body {
+    background-color: #DFEBE0 !important;
+    font-family: Arial, sans-serif;
+}
+
+h2{
+    color: #2c3e50;
+}
+p{
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+a {
+    display:inline-block;
+    margin:18px;
+    text-decoration: none;
+    border: 2px solid #ffffff;
+    border-radius:6px;
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: #ffffff;
+
+}
+
+a:hover{
+    text-decoration: underline;
+    background-color: #65Ab6E;
+}
+
+/*Page 1 styles for blocking elements */
+.page1-grid{
+    display:flex;
+    flex-direction: column;
+    padding: 12px;
+    gap:12px;
+}
+
+.row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.block{
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    background-color: #F5F7Fa;
+    color: #334155;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.block-top{
+    min-height: 150px;
+}
+
+.block-footer{
+    min-height: 80px;
+}
+
+@media (max-width:768px){
+    .row-2{grid-template-columns: 1fr;}
+}
+
+/* Page 2 Blocking and Cat Facts Styles*/
+.page2-wrap{
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.page-title{
+    font-size: 28px;
+    color: #1f2937;
+    margin-top: 6px;
+}
+
+.page-subtitle{
+    color: #475569;
+    margin-top: 15px;
+}
+
+/*cat fact id styling --- id's are styled with the #id while classes have the decimal. 
+before the class*/
+
+#btn-cat{
+    display:inline-block;
+    font-size: 18px;
+    padding: 10px 18px;
+    border: 2px solid #1f2937;
+    border-radius: 8px;
+    background-color: #0ea5e9;
+    color:#ffffff;
+}
+
+#btn-cat:hover{
+    background-color: #1b4355;
+}
+
+#cat-fact{
+    display:block;
+    margin-top:14px;
+    padding: 14px 16px;
+    background-color: #ffffff;
+    color: #0f172a;
+    font-size:18px;
+    line-height: 1.5;
+    border: 2px solid #1f2937;
+    border-radius: 8px;
+    min-height: 72px;
+
+}
