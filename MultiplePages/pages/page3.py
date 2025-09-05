@@ -14,11 +14,11 @@ df = (
        .groupby(["year", "state"], as_index=False)["price"].mean()
 )
 
-# Slider bounds
+# Pulling out slider bounds into variables
 YEAR_MIN = int(df["year"].min())
 YEAR_MAX = int(df["year"].max())
 
-# Lock color scale across all years (in cents/kWh)
+# Lock in color scale across all years (in cents/kWh)
 V_MIN = float(df["price"].min())
 V_MAX = float(df["price"].max())
 
@@ -44,6 +44,7 @@ layout = html.Div(
     Output("choropleth-map", "figure"), 
     Input("year-slider", "value")
 )
+
 def update_map(selected_year):
     d = df[df["year"] == selected_year]
 
@@ -53,12 +54,14 @@ def update_map(selected_year):
         locationmode="USA-states",
         color="price",
         scope="usa",
-        color_continuous_scale=px.colors.sequential.Reds,
+        color_continuous_scale="Reds",
+        ##setting range color by the variables made above
         range_color=(V_MIN, V_MAX),      # consistent across years
         labels={"price": "Price (cents/kWh)"},
         title=f"Residential Electricity Prices - {selected_year}",
     )
 
+    ##added a better hovertemplate at 1 decimal
     fig.update_traces(
         hovertemplate="<b>%{location}</b><br>Price: %{z:.1f} cents/kWh<extra></extra>"
     )
