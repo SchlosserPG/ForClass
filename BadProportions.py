@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 from ucimlrepo import fetch_ucirepo
-import pandas as pd
 
 ##retrieved the data from the ucimlrepo, which means you need to have that library installed to access
 

@@ -1,7 +1,6 @@
 # MultiLayoutWeather.py
 import requests
 import pandas as pd #for data frame and manipulation
-from datetime import datetime #for date and time manipulation
 from dash import Dash, html, dcc, Input, Output 
 import dash_bootstrap_components as dbc #for bootstrap components
 import plotly.express as px #for data visualization
