@@ -10,7 +10,7 @@ raw = pd.read_csv(DataPath)
 
 # Keep just residential and compute ANNUAL mean price per state
 df = (
-    raw.loc[raw["sectorName"].str.lower().eq("residential"), ["year", "state", "price"]]
+    raw.loc[raw["sectorName"].eq("residential"), ["year", "state", "price"]]
        .groupby(["year", "state"], as_index=False)["price"].mean()
 )
 
